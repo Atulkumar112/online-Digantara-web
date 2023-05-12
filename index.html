@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="public/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digantara</title>
+    <link href="tailwind.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <style>
+      .flex{
+        display: flex;
+      }
+      img{
+       margin-bottom: 20px; 
+      }
+
+      .font-mon{
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      .font-poppins{
+        font-family: 'Poppins', sans-serif;
+      }
+
+      emailFunc{
+        margin-top: 20px;
+      }
+
+      .title{
+        color: white;
+        z-index: 2;
+        position: absolute;
+        font-size: 3rem;
+        left: 60%;
+        top: 80%;
+      }
+
+      
+      .row{
+        z-index: 2;
+        position: absolute;
+        font-size: 3rem;
+        left: 67%;
+        top: 83%;
+      }
+
+      .column {
+        float: left;
+        width: 33.33%;
+        padding: 10px;
+      }
+
+      /* Clearfix (clear floats) */
+      .row::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+
+      /* //--------------- */
+      /* for email input */
+      .buttonIn { 
+        padding: 10px;
+        width: 350px;
+        height: 100px; 
+        position: relative; 
+        
+        
+      } 
+      
+
+      input { 
+        padding: 0px 10px; 
+        margin: 11px; 
+        padding: 25px; 
+        width: 100%; 
+        outline: none; 
+        height: 20px; 
+        width: 450px;
+        border-radius: 35px; 
+        padding-left: 24px; 
+        
+        /* opacity:0.1; */
+      } 
+      button { 
+        position: absolute; 
+        border-radius: 20px; 
+        right: -117px; 
+        padding: 10px 30px 35px 30px; 
+        /* border: none;  */
+        
+        top: 23.5px; 
+        height: 28px; 
+        cursor: pointer; 
+        color: white; 
+        background-image: linear-gradient( 130deg, #8564fc 30%, #3fa9e6 100%); 
+        /* border: black; */
+        
+      }
+      
+
+      .px-12 {
+          padding-top: 5rem;
+          padding-left: 6rem;
+          padding-right: 3rem;
+      }
+
+      .myEmail{
+        color: #8564fc;
+      }
+      
+    </style>
+
+    <script>
+      function myFunction() {
+        const emailInput = document.getElementById('email');
+        const messageDiv = document.getElementById('message');
+        
+        if (emailInput.value === '') {
+          messageDiv.innerText = 'Enter your email address';
+        } else {
+          messageDiv.innerText = 'Thank you for sharing your email. We will notify you when we launch.';
+        }
+
+        emailInput.value = "";
+        emailInput.placeholder = "Enter your email address";
+        
+      }
+    </script>
+  </head>
+  <body>
+    
+      <div class="flex h-screen bg-black ">
+        
+      <div class="w-1/2 flex flex-col justify-center px-12 mb-12 " style="background-image: url('./stars1.jpg');">
+        
+        <img src="https://digantara.co.in/wp-content/uploads/2022/11/Digantara_Logo-20.png" alt="" width="400" 
+        height="500" >
+        <h1 class="text-white mb-12 text-6xl font-mon">New-Age Space Cartographers</h1>
+        <p class="text-white text-gray-400 text-2xl">Safeguarding the future of space operations through comprehensive space situational awareness infrastructure.</p>
+
+        
+        <h1 class="text-white mt-10 text-3xl  font-poppins">Get notified when we launch</h1>
+
+        
+        <div class="buttonIn">
+          <input type="email" id="email" placeholder="Enter your email address" >
+          <button onclick="myFunction()" type="submit" >Submit</button>
+          <div id="message" class="myEmail"></div>
+       </div>
+       
+      
+      </div>
+
+      
+      <!-- It's for canvas  -->
+      <div class="w-1/2" id="canvasContainer">
+        <canvas></canvas>
+        <!-- <h1 class="title">Give it spain</h1> -->
+       
+        <div class="row">
+          <div class="column">
+            <a href="https://www.linkedin.com/company/digantara/" target="_blank"><img src="https://digantara.co.in/wp-content/uploads/2022/11/linkedIn.svg" width="67" height="67"> </a>
+          </div>
+          <div class="column">
+            <a href="https://twitter.com/digantarahq" target="_blank"><img src="https://digantara.co.in/wp-content/uploads/2022/11/twitter.svg" width="67" height="67"> </a>
+          </div>
+          <div class="column">
+            <a href="https://digantara.co.in/" target="_blank"><img src="https://digantara.co.in/wp-content/uploads/2022/11/gmail.svg" width="67" height="67"> </a>
+          </div>
+        </div>
+        
+      </div>
+
+    </div>
+    <!-- <div id="app"></div> -->
+      <script type="module" src="/main.js"></script>
+  </body>
+</html>
+
+
+
